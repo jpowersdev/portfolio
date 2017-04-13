@@ -1,0 +1,87 @@
+body {
+    background-color: rgb(238, 238, 238);
+    font-family: 'Open Sans', sans-serif;
+}
+
+a:link    {
+  text-decoration:  none;
+  font-weight:      bold;
+  color:            #777777;
+  } 
+a:visited {
+  text-decoration:  none;
+  font-weight:      bold;
+  color:            #595959;
+  } 
+a:hover   {
+  text-decoration:  none;
+  font-weight:      bold;
+  color:            #3B3B3B;
+  } 
+a:active  {
+  text-decoration:  none;
+  font-weight:      bold;
+  color: white;
+  } 
+
+#page1, #page2 {
+    height: 100vh;
+}
+
+#page2 {
+    visibility: hidden;
+    height: 0px;
+}
+
+#resume {
+    padding-left: 10px;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#contact {
+    float: right;
+    padding-right: 10px;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#brand {
+    padding-top: 10%;
+    text-align: center;
+    height: 90%;
+}
+
+#brand h1 {
+    font-size: 106px;
+    font-family: 'Poiret One', cursive;
+}
+
+#brand h3 {
+    margin-top: -5%;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.title {
+    font-family: 'Poiret One', cursive;
+    font-size: 56px;
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+#works {
+    font-size: 26px;
+    list-style-type: none;
+}
+
+
+.desc {
+    font-size: 16px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.work_title {
+
+}
