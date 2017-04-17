@@ -1,87 +1,217 @@
 body {
-    background-color: rgb(238, 238, 238);
-    font-family: 'Open Sans', sans-serif;
+  background-color: rgb(238, 238, 238);
+  font-family: 'Open Sans', sans-serif;
 }
 
-a:link    {
-  text-decoration:  none;
-  font-weight:      bold;
-  color:            #777777;
-  } 
-a:visited {
-  text-decoration:  none;
-  font-weight:      bold;
-  color:            #595959;
-  } 
-a:hover   {
-  text-decoration:  none;
-  font-weight:      bold;
-  color:            #3B3B3B;
-  } 
-a:active  {
-  text-decoration:  none;
-  font-weight:      bold;
-  color: white;
-  } 
+body,
+html {
+  height: 100%;
+  overflow: hidden !important;
+}
 
-#page1, #page2 {
-    height: 100vh;
+h3 {
+  font-family: 'Poiret One', cursive;
+  font-size: 1.7em;
+}
+
+h4 {
+  font-weight: bold;
+  color: #595959;
+}
+
+a:link {
+  text-decoration: none;
+  font-weight: bold;
+  color: #777777;
+}
+
+a:visited {
+  text-decoration: none;
+  font-weight: bold;
+  color: #595959;
+}
+
+a:hover {
+  text-decoration: none;
+  font-weight: bold;
+  color: #3B3B3B;
+}
+
+a:active {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+
+#page1,
+#page2 {
+  height: 80vh;
+}
+
+#page1 {
+  height: 100%;
+  overflow: hidden;
 }
 
 #page2 {
-    visibility: hidden;
-    height: 0px;
+  visibility: hidden;
+  height: 0px;
+}
+
+#header {
+  margin-top: 2%;
+  padding-left: 3%;
+  padding-right: 3%;
+  text-align: center;
+  font-size: 2vw;
 }
 
 #resume {
-    padding-left: 10px;
-    font-size: 20px;
-    font-family: 'Open Sans', sans-serif;
+  float: left;
 }
 
 #contact {
-    float: right;
-    padding-right: 10px;
-    font-size: 20px;
-    font-family: 'Open Sans', sans-serif;
+  float: right;
 }
 
 #brand {
-    padding-top: 10%;
-    text-align: center;
-    height: 90%;
+  margin-top: 12vh;
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: center;
+  height: 90%;
 }
 
 #brand h1 {
-    font-size: 106px;
-    font-family: 'Poiret One', cursive;
+  font-size: 12vw;
+  font-family: 'Poiret One', cursive;
+}
+
+#brand h2 {
+  font-size: 3.6vw;
+  font-family: 'Poiret One', sans-serif;
 }
 
 #brand h3 {
-    margin-top: -5%;
-    font-size: 20px;
-    font-family: 'Open Sans', sans-serif;
+  font-size: 2.8vw;
 }
 
-.title {
-    font-family: 'Poiret One', cursive;
-    font-size: 56px;
-    text-align: center;
-    margin-bottom: 10%;
+#brand h4 {
+  font-size: 1.8vw;
 }
 
-#works {
-    font-size: 26px;
-    list-style-type: none;
+#modal_body {
+  display: flex;
+  text-align: center;
 }
 
-
-.desc {
-    font-size: 16px;
-    margin-left: 5%;
-    margin-right: 5%;
+.header {
+  text-align: center;
 }
 
-.work_title {
+.right {
+  text-align: right;
+}
 
+.right>.content {
+  margin-right: 1.5em !important;
+}
+
+.image.content > .description {
+  margin-left: 2em;
+  font-size: 22px;
+}
+
+.work_img {
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .work_img {
+    max-height: 250px;
+    width: auto !important;
+  }
+  #header {
+    font-size: 3.2vw;
+  }
+
+  #brand h1 {
+    font-size: 14.8vw;
+  }
+  #brand h2 {
+    font-size: 4.8vw;
+  }
+  #brand h3 {
+    font-size: 4vw;
+  }
+}
+
+@media screen and (max-width: 545px) {
+  .work_img {
+    max-height: 200px;
+    width: auto !important;
+  }
+}
+
+@media screen and (max-width: 444px) {
+  .work_img {
+    max-height: 175px;
+    width: auto !important;
+  }
+}
+
+#resume_modal {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+  width: 90% !important;
+}
+
+#resume_modal>.content {
+  padding: 1rem !important;
+}
+
+iframe {
+  width: 100%;
+  height: 85vh;
+}
+
+@media screen and (max-width: 850px) {
+  iframe {
+    height: 84vh;
+  }
+}
+@media screen and (max-width: 800px) {
+  iframe {
+    height: 82vh;
+  }
+}
+
+#pdf_actions {
+  padding: 6px;
+}
+
+.zoom_modal {
+  width: auto !important;
+  max-height: 65vh;
+  display: block;
+  margin: 0 auto;
+}
+
+#work_modal {
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
+}
+
+#work_modal>.content {
+  overflow: scroll;
+}
+
+.locked_modal>.content {
+  max-height: 70vh;
+}
+
+.large.github.icon {
+  padding-left: 20px;
+  padding-right: 15px;
+  margin-top: -10px;
 }
