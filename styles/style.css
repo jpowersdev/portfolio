@@ -119,6 +119,7 @@ a:active {
 
 .image.content > .description {
   margin-left: 2em;
+  display: block;
   font-size: 22px;
 }
 
