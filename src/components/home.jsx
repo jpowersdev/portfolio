@@ -11,7 +11,7 @@ import '../images/sjcuisine.png'
 
 import '../docs/jonpowers_resume2017.pdf'
 
-import '../styles/style.css'
+import '../styles/home.styl'
 import '../scripts/main.js'
 
 class WorkModal extends React.Component {
@@ -51,6 +51,9 @@ class WorkModal extends React.Component {
               <div className="content">
                 <a className="header">
                   This Site
+                </a>
+                <a href="https://github.com/jonpowers/portfolio">
+                  <i className="large github icon" />
                 </a>
                 <div className="description">
                   <p>
@@ -289,6 +292,7 @@ class Home extends React.Component {
               <Link id="blog" to="/blog">Blog</Link>
             </div>
           </div>
+          <div>
         </div>
         <div id="brand">
           <h1>Jon Powers</h1>
@@ -296,8 +300,7 @@ class Home extends React.Component {
           <h3>Node.js / HTML5 / CSS3</h3>
         </div>
       </div>
-
-
+    </div>
     )
   }
 }

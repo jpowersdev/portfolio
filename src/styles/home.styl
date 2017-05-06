@@ -1,0 +1,129 @@
+body
+  background-color rgb(238, 238, 238)
+  font-family 'Open Sans', sans-serif
+
+body,
+html
+  height 100%
+  overflow hidden !important
+
+h3
+  font-family 'Poiret One', cursive
+  font-size 1.7em
+
+h4
+  font-weight bold
+  color #595959
+
+a
+  &:link
+    text-decoration none
+    font-weight bold
+    color #595959
+  &:visited
+    text-decoration none
+    font-weight bold
+    color #595959
+  &:hover
+    text-decoration none
+    font-weight bold
+    color #3B3B3B
+  &:active
+    text-decoration none
+    font-weight bold
+    color white
+
+#page1,
+#page2
+  height 80vh
+
+#page1
+  height 100%
+  overflow hidden
+
+#page2
+  visibility hidden
+  height 0px
+
+#header
+  margin-top 2%
+  padding-left 3%
+  padding-right 3%
+  text-align center
+  font-size 2vw
+
+#brand
+  margin-top 12vh
+  margin-left 5%
+  margin-right 5%
+  text-align center
+  h1
+    font-size 10.5vw
+    font-family 'Poiret One', cursive
+  h2
+    font-size 3.6vw
+    font-family 'Poiret One', sans-serif
+  h3
+    font-size 2.8vw
+  h4
+    font-size 1.8vw
+
+#modal_body
+  display flex
+  text-align center
+
+.header
+  text-align center
+
+.right
+  text-align right
+  & > .content
+    margin-right 1.5em !important
+
+.work_img
+  width 100%
+
+@media screen and (max-width: 767px)
+  .work_img
+    max-height 250px
+    width auto !important
+  #header
+    font-size 3.2vw
+  #brand
+    h1
+      font-size 14.8vw
+    h2
+      font-size 4.8vw
+    h3
+      font-size 4vw
+
+@media screen and (max-width: 545px)
+  .work_img
+    max-height: 200px
+    width: auto !important
+
+@media screen and (max-width: 444px)
+  .work_img
+    max-height 175px
+    width auto !important
+
+#pdf_actions
+  padding 6px
+
+.zoom_modal
+  width auto !important
+  max-height 65vh
+  display block
+  margin 0 auto
+
+.large
+  &.github
+    &.icon
+      padding-left 20px
+      padding-right 15px
+      margin-top -10px
+
+div
+  &.ui
+    &.list
+      font-size 2.5vw

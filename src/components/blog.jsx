@@ -6,8 +6,13 @@ import {
 } from 'react-router-dom'
 
 import Feed from './feed.jsx'
-import Header from './header.jsx'
 
+const Header = () => (
+  <div className="header">
+    <h1>Jon Powers</h1>
+    <h4>This is my blog</h4>
+  </div>
+)
 
 const Sidebar = () => (
   <ul>
