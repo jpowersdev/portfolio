@@ -4,6 +4,7 @@
   "description": "Miscellaneous ramblings",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "watch": "webpack -d --watch",
     "build": "webpack",
     "serve": "serve ./public"
@@ -22,21 +23,23 @@
     "css-loader": "^0.28.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
-    "react-semantic-ui": "^0.2.0",
-    "semantic-ui-react": "^0.68.2",
+    "mongodb": "^2.2.26",
     "serve": "^5.1.4",
     "style-loader": "^0.16.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "svg-loader": "0.0.2",
     "url-loader": "^0.5.8",
-    "webpack": "^2.4.1"
+    "webpack": "^2.4.1",
+    "webpack-node-externals": "^1.5.4"
   },
   "dependencies": {
+    "markdown-to-jsx": "^5.3.3",
+    "meta-marked": "^0.4.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
-    "semantic-ui": "^2.2.10"
+    "semantic-ui-react": "^0.68.2"
   }
 }

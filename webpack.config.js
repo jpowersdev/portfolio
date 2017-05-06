@@ -1,6 +1,7 @@
 const path = require('path');
+const fs = require('fs');
 const webpack = require('webpack'); //to access built-in plugins
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   entry: path.resolve(__dirname, "src/index.jsx"),
@@ -27,7 +28,7 @@ module.exports = {
         use: ExtractTextPlugin.extract({
            use: 'css-loader',
            fallback: 'style-loader'
-       })
+        })
       },
       {
         test: /\.(eot|svg|ttf|woff(2)?)(\?v=\d+\.\d+\.\d+)?/,
@@ -38,14 +39,21 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: '../images/[name].[ext]',
-        },
+        }
       },
       {
         test: /\.(pdf)$/,
         loader: 'file-loader',
         options: {
           name: '../docs/[name].[ext]',
-        },
+        }
+      },
+      {
+        test: /\.(md)$/,
+        loader: 'file-loader',
+        options: {
+          name: '../archive/[name].[ext]',
+        }
       },
       {
         test: /\.styl$/,
@@ -55,14 +63,15 @@ module.exports = {
 
   },
 
-  devtool: "source-map",
+  // devtool: "source-map",
 
   target: "web",
 
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify('production')
+        // NODE_ENV: JSON.stringify('production')
+        NODE_ENV: JSON.stringify('development')
       }
     }),
     new webpack.optimize.UglifyJsPlugin(),

@@ -1,27 +1,28 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import { Container } from 'semantic-ui-react'
 
 import Post from './post.jsx'
 
+import '../styles/feed.styl'
+import File from '../archive/untitled.md'
+
 const PostList = (props) => (
   <div className="ui feed">
-  <Post postnum={1} score="28.2k"/>
-  <Post postnum={1} score="28.2k"/>
-  <Post postnum={1} score="28.2k"/>
+    <p>{props.list}</p>
+    <Post file="untitled.md"/>
   </div>
 )
 
 class Feed extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {topic: props.topic}
   }
   render() {
     return (
-      <div>
-        <h1>{this.state.topic}</h1>
+      <Container className="container">
         <PostList/>
-      </div>
+      </Container>
     )
   }
 };

@@ -7,20 +7,19 @@ import {
   Link
 } from 'react-router-dom'
 
-import './styles/main.styl';
 import './styles/font-awesome.min.css';
 
 import Blog from './components/blog.jsx'
 import Home from './components/home.jsx'
 
 render (
-    <Router>
-      <div className="container">
+  <Router>
+    <div>
       <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route exact path="/blog" component={Blog}/>
+        <Route exact path="/" component={Blog}/>
+        <Route exact path="/blog" component={Home}/>
       </Switch>
     </div>
-    </Router>,
-    document.getElementById('app')
+  </Router>,
+  document.getElementById('app')
 );
