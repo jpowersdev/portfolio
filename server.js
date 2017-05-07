@@ -6,6 +6,7 @@ const marked = require('meta-marked')
 
 app.get('/archive/:filename', function (req, res) {
   filename = path.resolve(__dirname, 'public/archive/', req.params.filename);
+
   fs.readFile(filename, 'utf8', function (err,data) {
     res.set('Access-Control-Allow-Origin', '*')
     if (err) {

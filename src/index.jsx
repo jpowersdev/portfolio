@@ -16,8 +16,8 @@ render (
   <Router>
     <div>
       <Switch>
-        <Route exact path="/" component={Blog}/>
-        <Route exact path="/blog" component={Home}/>
+        <Route exact path="/" component={Home}/>
+        <Route exact path="/blog" component={Blog}/>
       </Switch>
     </div>
   </Router>,

@@ -1,7 +1,7 @@
 ---
 title:			Welcome to my blog!
 subtitle:		It's gonna be lit
-tags:			[cat, dog, fam]
+tags:			[Node.js, React, JS]
 timestamp:	May 6 2017  
 ...
 
