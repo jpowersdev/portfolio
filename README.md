@@ -20,7 +20,7 @@ Regular JS file (no ES6), containing methods to control Modals
 <br/>
 Modal functionality provided by Semantic-UI
 
-Work in Progress
+**Work in Progress**
 <br/>
-Questions? Email me at dev@jpow.io
+**Questions? Email me at dev@jpow.io**
 
