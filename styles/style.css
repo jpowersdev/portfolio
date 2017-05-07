@@ -83,7 +83,7 @@ a:active {
 }
 
 #brand h1 {
-  font-size: 12vw;
+  font-size: 10.5vw;
   font-family: 'Poiret One', cursive;
 }
 
@@ -161,32 +161,6 @@ a:active {
   }
 }
 
-#resume_modal {
-  margin-top: 0.5rem !important;
-  margin-bottom: 0.5rem !important;
-  width: 90% !important;
-}
-
-#resume_modal>.content {
-  padding: 1rem !important;
-}
-
-iframe {
-  width: 100%;
-  height: 85vh;
-}
-
-@media screen and (max-width: 850px) {
-  iframe {
-    height: 84vh;
-  }
-}
-@media screen and (max-width: 800px) {
-  iframe {
-    height: 82vh;
-  }
-}
-
 #pdf_actions {
   padding: 6px;
 }
@@ -199,11 +173,13 @@ iframe {
 }
 
 #work_modal {
-  margin-top: 15px !important;
-  margin-bottom: 15px !important;
+  top: 2vh;
+  margin-top: 2vh !important;
 }
 
 #work_modal>.content {
+  max-height: 65vh;
+  margin-bottom: 2vh !important;
   overflow: scroll;
 }
 
