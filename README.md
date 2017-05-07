@@ -19,8 +19,8 @@ Fonts are Poiret One and Open Sans
 Regular JS file (no ES6), containing methods to control Modals
 <br/>
 Modal functionality provided by Semantic-UI
+
 <br/>
----
 <br/>
 **Work in Progress**
 <br/>
