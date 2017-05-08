@@ -31,7 +31,7 @@ function getArchive(files) {
 }
 
 function loadFiles(files) {
-  console.log(files);
+  // console.log(files);
   return Promise.map(files, function(file) {
     return fs.readFileAsync(file, 'utf8');
   }).then((out) => {

@@ -40,6 +40,12 @@ class Blog extends React.Component {
     return (
       <div id="blog">
         <Header page="blog"/>
+          <h1 id="title">
+            Jon Powers
+          </h1>
+          <h2 id="subtitle">
+            Has a blog
+          </h2>
         <div className="ui grid">
           <div className="two wide column">
             <div id="tags">
