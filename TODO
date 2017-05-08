@@ -1,0 +1,2 @@
+Create fetch functions in Blog component so that when
+  tags or dates are clicked, a related function can be called.

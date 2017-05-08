@@ -1,7 +1,37 @@
 # Portfolio V2 (Now with Blog!)
 
 
-## Three Steps:
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine.
+
+### Prerequisites
+```
+node.js
+```
+### Installing
+Clone the github repo
+
+```
+git clone https://github.com/jonpowers/portfolio
+```
+
+Switch to the nodejs branch
+
+```
+git checkout nodejs
+```
+
+Install the dependencies
+
+```
+npm install
+```
+
+## Running the Server
+
+__Three steps:__
 
 1. `npm start`
 2. `npm run watch`
@@ -16,4 +46,15 @@ After running step three, you can visit the page at the location it tells you (f
 
 You need to have three console tabs open to launch this project, as each of the above steps will continue running until you manually exit.
 
-**Questions? Email me at [dev@jpow.io](mailto:dev@jpow.io)**
+## Built With
+* [Semantic-UI-React](https://react.semantic-ui.com/introduction) - Semantic-UI framework as React Components
+* [Bluebird.js](http://bluebirdjs.com/) - Promise library
+* [Lodash](https://lodash.com/) - Array/String manipulation
+* [FileHound](https://github.com/nspragg/filehound) - Access blog files
+* [Express](https://expressjs.com/) - Web server
+* [Moment.js](https://momentjs.com/) - Handle dates
+* [Meta-Marked](https://github.com/j201/meta-marked) - Process markdown files
+
+## License
+
+This project is licensed under the GPLv3 License - see the [LICENSE.md](LICENSE.md) file for details

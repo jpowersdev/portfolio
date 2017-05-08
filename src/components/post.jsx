@@ -1,6 +1,6 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-import {Label} from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
+import { Label, Loader } from 'semantic-ui-react'
 import Markdown from 'markdown-to-jsx'
 
 import '../styles/post.styl'
@@ -40,16 +40,19 @@ class Post extends React.Component {
   }
 
   componentDidMount() {
-    var filename = "http://localhost:5001/archive/"+this.state.file;
+    var filename = "/archive/"+this.state.file;
 
     fetch(filename)
       .then(response => response.json())
-      .then((data) => { this.setState({ data: data }); });
+      .then((data) => { this.setState({ data: data }); })
+      .catch((err) => console.log(err));
   }
   render () {
     if (!this.state.data) {
       return (
-          <div>Loading</div>
+          <div className="post ui segment">
+            <Loader active inline='centered' />
+          </div>
       )
     }
     return (

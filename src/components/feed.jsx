@@ -1,11 +1,10 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import { Container } from 'semantic-ui-react'
+import { Container, Loader } from 'semantic-ui-react'
 
 import Post from './post.jsx'
 
 import '../styles/feed.styl'
-import File from '../archive/untitled.md'
 
 function PostList(props) {
   const list = props.list;
@@ -26,9 +25,7 @@ class Feed extends React.Component {
       list: props.list
     }
   }
-
   render() {
-    console.log(this.state.list);
     return (
       <PostList list={this.state.list}/>
     )
