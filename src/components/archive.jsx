@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from 'semantic-ui-react'
 import Moment from 'moment'
 
 class Archive extends React.Component {
@@ -10,11 +11,13 @@ class Archive extends React.Component {
   }
 
   render () {
-    const Timestamp = (props) => (
-      <p className="timestamp">{Moment(props.value, "MMM DD YYYY").format("MMM YYYY")}</p>
+    const TimeStamp = (props) => (
+      <Button className="timestamp" onClick={this.props.loadMonth(props.value)}>
+        {Moment(props.value, "MMM DD YYYY").format("MMM YYYY")}
+      </Button>
     )
     const archive = this.state.archive.map((item, index) =>
-      <Timestamp key={index} value={item}/>
+      <TimeStamp key={index} value={item}/>
     );
     return (
       <div>

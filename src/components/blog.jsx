@@ -22,9 +22,42 @@ class Blog extends React.Component {
       archive: null,
       loaded: false
     }
+    this.loadAll = this.loadAll.bind(this);
+    this.loadTag = this.loadTag.bind(this);
+    this.loadMonth = this.loadMonth.bind(this);
   }
 
-  componentDidMount() {
+  loadTag(tag) {
+    this.setState({loaded: false})
+    fetch('/tags/'+tag)
+      .then(response => response.json())
+      .then((data) => {
+        this.setState({
+          filelist: data.files,
+          taglist: data.tags,
+          archive: data.archive,
+          loaded: true
+        })
+      }).catch((err) => console.log(err));
+    }
+
+  loadMonth(month) {
+    this.setState({loaded: false})
+    fetch('/months/'+month)
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data);
+        this.setState({
+          filelist: data.files,
+          taglist: data.tags,
+          archive: data.archive,
+          loaded: true
+        })
+        console.log(this.state);
+      }).catch((err) => console.log(err));
+    }
+
+  loadAll() {
     fetch('/files')
       .then(response => response.json())
       .then((data) => { this.setState({
@@ -32,8 +65,12 @@ class Blog extends React.Component {
         taglist: data.tags,
         archive: data.archive,
         loaded: true
-      }).catch((err) => console.log(err));
-    });
+      })
+    }).catch((err) => console.log(err));
+  }
+
+  componentDidMount() {
+    this.loadAll();
   }
 
   render () {
@@ -52,7 +89,9 @@ class Blog extends React.Component {
             <h3>Tags</h3>
               {!this.state.loaded ?
                 <Loader active inline='centered' /> :
-                <TagList list={this.state.taglist}/>
+                <TagList
+                  list={this.state.taglist}
+                  loadTag={(tag) => this.loadTag.bind(this, tag)}/>
               }
             </div>
           </div>
@@ -62,7 +101,9 @@ class Blog extends React.Component {
                 <div className="post ui segment">
                   <Loader active size='huge' inline='centered'>Loading...</Loader>
                 </div> :
-                <Feed list={this.state.filelist}/>
+                <Feed
+                  list={this.state.filelist}
+                  loadTag={(tag) => this.loadTag.bind(this, tag)}/>
               }
             </div>
           </div>
@@ -71,7 +112,9 @@ class Blog extends React.Component {
             <h3>Archive</h3>
               {!this.state.loaded ?
                 <Loader active inline='centered' /> :
-                <Archive list={this.state.archive}/>
+                <Archive
+                  list={this.state.archive}
+                  loadMonth={(month) => this.loadMonth.bind(this, month)}/>
               }
             </div>
           </div>

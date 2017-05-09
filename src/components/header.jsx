@@ -32,8 +32,6 @@ class Header extends React.Component {
             <ContactModal/>
           </div>
         </div>
-        <div>
-        </div>
       </div>
     );
   }

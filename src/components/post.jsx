@@ -25,7 +25,7 @@ const TitleBar = (props) => (
     <div className="sixteen wide column header">
       <h1 className="title">{props.data.title}</h1>
       <h2 className="subtitle">{props.data.subtitle}</h2>
-      <TagList tags={props.data.tags}/>
+      <TagList tags={props.data.tags} load={props.load}/>
     </div>
   </div>
 )
@@ -57,7 +57,7 @@ class Post extends React.Component {
     }
     return (
       <div className="post ui segment">
-        <TitleBar data={this.state.data}/>
+        <TitleBar data={this.state.data} load={this.state.load}/>
         <hr/>
         <Markdown>
           {this.state.data.markdown}

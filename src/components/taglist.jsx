@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from 'semantic-ui-react'
 
 class TagList extends React.Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class TagList extends React.Component {
 
   render () {
     const Tag = (props) => (
-      <p className="tag">{props.value}</p>
+      <Button className="tag" onClick={this.props.loadTag(props.value)}>{props.value}</Button>
     )
     const taglist = this.state.tags.map((item, index) =>
       <Tag key={index} value={item}/>
