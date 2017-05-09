@@ -35,6 +35,10 @@ function getArchive(files) {
   if (files.constructor === Array){
     return Promise.map(files, (file) => {
       return file.timestamp;
+    }).then((archive) => {
+      return _.uniq(_.flatten(archive)).sort((a, b) => {
+        return new Moment(a, "MMM DD YYYY").isBefore(Moment(b, "MMM DD YYYY"));
+      });
     })
   }
   else return [files.timestamp];

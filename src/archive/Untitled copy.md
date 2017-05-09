@@ -3,7 +3,7 @@ filename:		untitled copy.md
 title:			Welcome to my blog!
 subtitle:		It's gonna be lit
 tags:			[webpack, stylus, process.env]
-timestamp:	July 6 2017  
+timestamp:	July 6 2016  
 ...
 
 # This is a title
