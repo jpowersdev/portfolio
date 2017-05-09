@@ -20,6 +20,8 @@ class Blog extends React.Component {
       filelist: null,
       taglist: null,
       archive: null,
+      month_filter: false,
+      tag_filter: false,
       loaded: false
     }
     this.loadAll = this.loadAll.bind(this);
@@ -28,34 +30,48 @@ class Blog extends React.Component {
   }
 
   loadTag(tag) {
-    this.setState({loaded: false})
-    fetch('/tags/'+tag)
-      .then(response => response.json())
-      .then((data) => {
-        this.setState({
-          filelist: data.files,
-          taglist: data.tags,
-          archive: data.archive,
-          loaded: true
-        })
-      }).catch((err) => console.log(err));
+    this.setState({loaded: false, month_filter: false})
+    if (this.state.tag_filter) {
+      this.setState({tag_filter: false});
+      this.loadAll();
     }
+    else {
+      fetch('/tags/'+tag)
+        .then(response => response.json())
+        .then((data) => {
+          this.setState({
+            filelist: data.files,
+            taglist: data.tags,
+            archive: data.archive,
+            tag_filter: true,
+            loaded: true
+          })
+        }).catch((err) => console.log(err));
+    }
+  }
 
   loadMonth(month) {
-    this.setState({loaded: false})
-    fetch('/months/'+month)
-      .then(response => response.json())
-      .then((data) => {
-        console.log(data);
-        this.setState({
-          filelist: data.files,
-          taglist: data.tags,
-          archive: data.archive,
-          loaded: true
-        })
-        console.log(this.state);
-      }).catch((err) => console.log(err));
+    this.setState({loaded: false, tag_filter: false})
+    if (this.state.month_filter) {
+      this.setState({month_filter: false});
+      this.loadAll();
     }
+    else {
+      fetch('/months/'+month)
+        .then(response => response.json())
+        .then((data) => {
+          console.log(data);
+          this.setState({
+            filelist: data.files,
+            taglist: data.tags,
+            archive: data.archive,
+            month_filter: true,
+            loaded: true
+          })
+          console.log(this.state);
+        }).catch((err) => console.log(err));
+    }
+  }
 
   loadAll() {
     fetch('/files')
@@ -84,7 +100,7 @@ class Blog extends React.Component {
             Has a blog
           </h2>
         <div className="ui grid">
-          <div className="two wide column">
+          <div className="two wide column tag">
             <div id="tags">
             <h3>Tags</h3>
               {!this.state.loaded ?
@@ -107,7 +123,7 @@ class Blog extends React.Component {
               }
             </div>
           </div>
-          <div className="two wide column">
+          <div className="two wide column month">
             <div id="archive">
             <h3>Archive</h3>
               {!this.state.loaded ?
