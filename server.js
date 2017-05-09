@@ -14,7 +14,14 @@ const FileHound = require('filehound');
 function getFileNames(files) {
   if (files.constructor === Array){
     return Promise.map(files, (file) => {
-      return file.filename;
+      return file;
+    }).then((list) => {
+      // console.log(list);
+      return list.sort((a, b) => {
+        return new Moment(a.timestamp, "MMM DD YYYY").isBefore(Moment(b.timestamp, "MMM DD YYYY"));
+      }).map((file) => {
+          return file.filename;
+      })
     })
   }
   else return [files.filename];
@@ -36,9 +43,10 @@ function getArchive(files) {
     return Promise.map(files, (file) => {
       return file.timestamp;
     }).then((archive) => {
-      return _.uniq(_.flatten(archive)).sort((a, b) => {
-        return new Moment(a, "MMM DD YYYY").isBefore(Moment(b, "MMM DD YYYY"));
-      });
+      return _.uniqWith(
+        archive.sort((a, b) => {
+          return new Moment(a, "MMM DD YYYY").isBefore(Moment(b, "MMM DD YYYY"));
+        }), isSameMonth);
     })
   }
   else return [files.timestamp];

@@ -2,8 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Label, Loader } from 'semantic-ui-react'
 import Markdown from 'markdown-to-jsx'
+import hljs from 'highlight.js'
 
 import '../styles/post.styl'
+import '../styles/github-gist.css'
 
 function TagList(props) {
   const tags = props.tags;
@@ -47,6 +49,9 @@ class Post extends React.Component {
       .then((data) => { this.setState({ data: data }); })
       .catch((err) => console.log(err));
   }
+  componentDidUpdate() {
+    hljs.initHighlighting();
+  }
   render () {
     if (!this.state.data) {
       return (
@@ -59,7 +64,15 @@ class Post extends React.Component {
       <div className="post ui segment">
         <TitleBar data={this.state.data} load={this.state.load}/>
         <hr/>
-        <Markdown>
+        <Markdown options={{
+            overrides: {
+              div: {
+                props: {
+                  className: 'markdown'
+                }
+              }
+            }
+          }}>
           {this.state.data.markdown}
         </Markdown>
       </div>

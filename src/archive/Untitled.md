@@ -3,7 +3,7 @@ filename:		untitled.md
 title:			Welcome to my blog!
 subtitle:		It's gonna be lit
 tags:			[Node.js, React, JS]
-timestamp:	June 6 2017  
+timestamp:	May 7 2017  
 ...
 
 # This is a title
