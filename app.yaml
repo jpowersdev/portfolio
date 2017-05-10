@@ -1,5 +1,3 @@
 runtime: nodejs
 env: flex
-env_variables:
-  GCLOUD_PROJECT: jpow-portfolio
-  PORT: 8080
+skip_files: /node_modules/

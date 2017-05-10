@@ -107,7 +107,8 @@ class Blog extends React.Component {
                 <Loader active inline='centered' /> :
                 <TagList
                   list={this.state.taglist}
-                  loadTag={(tag) => this.loadTag.bind(this, tag)}/>
+                  loadTag={(tag) => this.loadTag.bind(this, tag)}
+                  filtered={this.state.tag_filter}/>
               }
             </div>
           </div>
@@ -130,7 +131,8 @@ class Blog extends React.Component {
                 <Loader active inline='centered' /> :
                 <Archive
                   list={this.state.archive}
-                  loadMonth={(month) => this.loadMonth.bind(this, month)}/>
+                  loadMonth={(month) => this.loadMonth.bind(this, month)}
+                  filtered={this.state.month_filter}/>
               }
             </div>
           </div>

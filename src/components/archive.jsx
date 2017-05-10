@@ -13,7 +13,7 @@ class Archive extends React.Component {
   render () {
     const TimeStamp = (props) => (
       <Button className="timestamp" onClick={this.props.loadMonth(props.value)}>
-        {Moment(props.value, "MMM DD YYYY").format("MMM YYYY")}
+        {this.props.filtered ? <i className="fa fa-times"/> : <span></span>} {Moment(props.value, "MMM DD YYYY").format("MMM YYYY")}
       </Button>
     )
     const archive = this.state.archive.map((item, index) =>

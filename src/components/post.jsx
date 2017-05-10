@@ -1,7 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Label, Loader } from 'semantic-ui-react'
-import Markdown from 'markdown-to-jsx'
+
+import remark from 'remark';
+import reactRenderer from 'remark-react';
+import RemarkLowlight from '../scripts/react-lowlight';
+
+import javascript from 'highlight.js/lib/languages/javascript';
+
+import merge from 'deepmerge';
+import sanitizeGhSchema from 'hast-util-sanitize/lib/github.json';
+
+const schema = merge(sanitizeGhSchema, { attributes: { 'code': ['className'] } });
 
 import '../styles/post.styl'
 import '../styles/github-gist.css'
@@ -48,9 +58,6 @@ class Post extends React.Component {
       .then((data) => { this.setState({ data: data }); })
       .catch((err) => console.log(err));
   }
-  componentDidUpdate() {
-    console.log("did update");
-  }
   render () {
     if (!this.state.data) {
       return (
@@ -63,17 +70,16 @@ class Post extends React.Component {
       <div className="post ui segment">
         <TitleBar data={this.state.data} load={this.state.load}/>
         <hr/>
-        <Markdown options={{
-            overrides: {
-              div: {
-                props: {
-                  className: 'markdown'
-                }
+        <div className="markdown">
+          {
+            remark().use(reactRenderer, {
+              sanitize: schema,
+              remarkReactComponents: {
+                code: RemarkLowlight()
               }
-            }
-          }}>
-          {this.state.data.markdown}
-        </Markdown>
+            }).processSync(this.state.data.markdown).contents
+          }
+        </div>
       </div>
 
     )

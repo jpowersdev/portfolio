@@ -11,7 +11,7 @@ class TagList extends React.Component {
 
   render () {
     const Tag = (props) => (
-      <Button className="tag" onClick={this.props.loadTag(props.value)}>{props.value}</Button>
+      <Button className="tag" onClick={this.props.loadTag(props.value)}>{this.props.filtered ? <i className="fa fa-times"/> : <span></span>} {props.value}</Button>
     )
     const taglist = this.state.tags.map((item, index) =>
       <Tag key={index} value={item}/>
