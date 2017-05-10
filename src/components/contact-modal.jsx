@@ -20,12 +20,12 @@ class ContactModal extends React.Component {
         dimmer="blurring"
         >
         <Modal.Header>
-          <h3>
+          <h3 className="contact-header">
             How to Find Me
           </h3>
         </Modal.Header>
         <Modal.Content>
-          <div className="ui grid">
+          <div className="ui grid contact">
             <div className="eleven wide column">
               <div className="ui list">
                 <div className="item">

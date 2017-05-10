@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Label, Loader } from 'semantic-ui-react'
 import Markdown from 'markdown-to-jsx'
-import hljs from 'highlight.js'
 
 import '../styles/post.styl'
 import '../styles/github-gist.css'
@@ -50,7 +49,7 @@ class Post extends React.Component {
       .catch((err) => console.log(err));
   }
   componentDidUpdate() {
-    hljs.initHighlighting();
+    console.log("did update");
   }
   render () {
     if (!this.state.data) {
