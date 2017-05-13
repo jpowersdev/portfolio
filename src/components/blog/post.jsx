@@ -4,7 +4,7 @@ import { Label, Loader } from 'semantic-ui-react'
 
 import remark from 'remark';
 import reactRenderer from 'remark-react';
-import RemarkLowlight from '../scripts/react-lowlight';
+import RemarkLowlight from '../../scripts/react-lowlight';
 
 import javascript from 'highlight.js/lib/languages/javascript';
 
@@ -13,8 +13,8 @@ import sanitizeGhSchema from 'hast-util-sanitize/lib/github.json';
 
 const schema = merge(sanitizeGhSchema, { attributes: { 'code': ['className'] } });
 
-import '../styles/post.styl'
-import '../styles/github-gist.css'
+import '../../styles/post.styl'
+import '../../styles/github-gist.css'
 
 function TagList(props) {
   const tags = props.tags;

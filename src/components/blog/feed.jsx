@@ -4,7 +4,7 @@ import { Container, Loader } from 'semantic-ui-react'
 
 import Post from './post.jsx'
 
-import '../styles/feed.styl'
+import '../../styles/feed.styl'
 
 function PostList(props) {
   const list = props.list;

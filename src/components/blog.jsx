@@ -7,9 +7,9 @@ import {
 import { Loader } from 'semantic-ui-react'
 
 import Header from './header.jsx'
-import Feed from './feed.jsx'
-import Archive from './archive.jsx'
-import TagList from './taglist.jsx'
+import Feed from './blog/feed.jsx'
+import Archive from './blog/archive.jsx'
+import TagList from './blog/taglist.jsx'
 
 import '../styles/blog.styl'
 
@@ -96,7 +96,7 @@ class Blog extends React.Component {
           <h1 id="title">
             Jon Powers
           </h1>
-          
+
         <div className="ui grid">
           <div className="two wide column tag">
             <div id="tags">

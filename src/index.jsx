@@ -11,6 +11,7 @@ import './styles/font-awesome.min.css';
 
 import Blog from './components/blog.jsx'
 import Home from './components/home.jsx'
+import Landing from './components/landing.jsx'
 
 render (
   <Router>
@@ -18,6 +19,7 @@ render (
       <Switch>
         <Route exact path="/" component={Home}/>
         <Route exact path="/blog" component={Blog}/>
+        <Route exact path="/landing" component={Landing}/>
       </Switch>
     </div>
   </Router>,
