@@ -96,9 +96,7 @@ class Blog extends React.Component {
           <h1 id="title">
             Jon Powers
           </h1>
-          <h2 id="subtitle">
-            Has a blog
-          </h2>
+          
         <div className="ui grid">
           <div className="two wide column tag">
             <div id="tags">
