@@ -68,7 +68,7 @@ class Landing extends React.Component {
         <div id="page3">
           <div className="header">
             <h1>Web Applications</h1>
-            <h2>Node and React</h2>
+            <h2>Node.js and React</h2>
             <h3>Scale your data with your business and never forget a thing</h3>
           </div>
           <Container>
