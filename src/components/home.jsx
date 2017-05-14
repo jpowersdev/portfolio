@@ -8,7 +8,7 @@ import '../styles/home.styl'
 class Home extends React.Component {
   render () {
     return (
-      <div id="page1">
+      <div id="home">
         <Header page="home"/>
         <div id="brand">
           <h1>Jon Powers</h1>

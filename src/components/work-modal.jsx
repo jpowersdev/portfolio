@@ -25,6 +25,7 @@ class WorkModal extends React.Component {
       <Modal
         open={this.state.modalOpen}
         dimmer="blurring"
+        id="work_modal"
         trigger={
           <a id="work" href="#" onClick={this.handleOpen}>Work</a>
         }>

@@ -20,7 +20,7 @@ module.exports = {
         loader: "babel-loader",
 
         options: {
-          presets: ['env','react','stage-0']
+          presets: ['env', 'react', 'stage-0']
         },
       },
       {
@@ -33,6 +33,13 @@ module.exports = {
       {
         test: /\.(eot|svg|ttf|woff(2)?)(\?v=\d+\.\d+\.\d+)?/,
         loader: 'url-loader'
+      },
+      {
+        test: /\.(otf)$/,
+        loader: 'file-loader',
+        options: {
+          name: '../fonts/[name].[ext]',
+        }
       },
       {
         test: /\.(jpg|png)$/,
