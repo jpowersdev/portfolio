@@ -3,9 +3,11 @@ import {
   Container,
   Divider,
   Grid,
+  Icon,
   Image,
   Segment
 } from 'semantic-ui-react'
+import $ from 'jquery'
 
 import '../styles/landing.styl'
 
@@ -18,11 +20,35 @@ class Landing extends React.Component {
   render () {
     return (
       <div id="landing">
-        <div id="page1">
+        <div id="page1" className="masthead segment">
           <div id="header">
-            <h1>Jon Powers</h1>
-            <h2>Fullstack Web Developer</h2>
-            <h3>ES7 / HTML5 / CSS3</h3>
+            <h1>Jon Powers </h1>
+            <h2>Fullstack Web Developer </h2>
+            <Container>
+              <Grid columns={3}>
+                <Grid.Column>
+                  <Segment>
+                    <Icon name="code" size="huge"/>
+                    <h4></h4>
+                    <p></p>
+                  </Segment>
+                </Grid.Column>
+                <Grid.Column>
+                  <Segment>
+                    <Icon name="html5" size="huge"/>
+                    <h4>Modern Technologies</h4>
+                    <p>Using the same software stack as the professionals, Node.js and React</p>
+                  </Segment>
+                </Grid.Column>
+                <Grid.Column>
+                  <Segment>
+                    <Icon name="map" size="huge"/>
+                    <h4></h4>
+                    <p></p>
+                  </Segment>
+                </Grid.Column>
+              </Grid>
+            </Container>
           </div>
         </div>
         <div id="page2">
@@ -35,7 +61,7 @@ class Landing extends React.Component {
             <Grid stackable columns={3}>
               <Grid.Row>
                 <Grid.Column>
-                  <Segment color='red'>
+                  <Segment color='green'>
                     <Image src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript_UI_widgets_library_for_building_desktop_and_mobile_web_apps.png" />
                     <Divider horizontal>Find</Divider>
                     <p>
@@ -44,7 +70,7 @@ class Landing extends React.Component {
                   </Segment>
                 </Grid.Column>
                 <Grid.Column>
-                  <Segment color='orange'>
+                  <Segment color='green'>
                     <Image src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript_UI_widgets_library_for_building_desktop_and_mobile_web_apps.png" />
                       <Divider horizontal>Attract</Divider>
                       <p>
@@ -53,7 +79,7 @@ class Landing extends React.Component {
                   </Segment>
                 </Grid.Column>
                 <Grid.Column>
-                  <Segment color='yellow'>
+                  <Segment color='green'>
                     <Image src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript_UI_widgets_library_for_building_desktop_and_mobile_web_apps.png" />
                       <Divider horizontal>Learn</Divider>
                       <p>
@@ -75,7 +101,7 @@ class Landing extends React.Component {
             <Grid stackable columns={3}>
               <Grid.Row>
                 <Grid.Column>
-                  <Segment color='olive'>
+                  <Segment color='orange'>
                     <Image src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript_UI_widgets_library_for_building_desktop_and_mobile_web_apps.png" />
                     <Divider horizontal>Responsive Design</Divider>
                     <p>
@@ -84,12 +110,12 @@ class Landing extends React.Component {
                   </Segment>
                 </Grid.Column>
                 <Grid.Column>
-                  <Segment color='green'>
+                  <Segment color='orange'>
                     <Image src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript_UI_widgets_library_for_building_desktop_and_mobile_web_apps.png" />
                   </Segment>
                 </Grid.Column>
                 <Grid.Column>
-                  <Segment color='teal'>
+                  <Segment color='orange'>
                     <Image src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript_UI_widgets_library_for_building_desktop_and_mobile_web_apps.png" />
                   </Segment>
                 </Grid.Column>
@@ -107,7 +133,7 @@ class Landing extends React.Component {
               <Grid stackable columns={3}>
                 <Grid.Row>
                   <Grid.Column>
-                    <Segment color='blue'>
+                    <Segment color='pink'>
                       <Image src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript_UI_widgets_library_for_building_desktop_and_mobile_web_apps.png" />
                       <Divider horizontal>Responsive Design</Divider>
                       <p>
@@ -116,21 +142,18 @@ class Landing extends React.Component {
                     </Segment>
                   </Grid.Column>
                   <Grid.Column>
-                    <Segment color='violet'>
+                    <Segment color='pink'>
                       <Image src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript_UI_widgets_library_for_building_desktop_and_mobile_web_apps.png" />
                     </Segment>
                   </Grid.Column>
                   <Grid.Column>
-                    <Segment color='purple'>
+                    <Segment color='pink'>
                       <Image src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript_UI_widgets_library_for_building_desktop_and_mobile_web_apps.png" />
                     </Segment>
                   </Grid.Column>
                 </Grid.Row>
               </Grid>
             </Container>
-        </div>
-        <div id="page5">
-          <h1></h1>
         </div>
       </div>
     )
